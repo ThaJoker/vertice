@@ -4,8 +4,8 @@ import { useState } from 'react';
 
 const EMPRESA = {
   nombre: "VÉRTICE",
-  whatsapp: "549XXXXXXXXXXX",       // ← Poné tu número real acá
-  telefono: "+54 9 XX XXX-XXXX",     // ← Para mostrar en pantalla
+  whatsapp: "+5492255555094",       // ← Poné tu número real acá
+  telefono: "+5492255555094",     // ← Para mostrar en pantalla
   instagram: "vertice.cristales",    // ← Tu usuario de Instagram sin @
   correo: "info@verticecristales.com.ar", // ← Tu correo
 };
