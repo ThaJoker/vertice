@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Image from "next/image"; // ✅ Importamos Image
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
@@ -7,7 +8,7 @@ const inter = Inter({ subsets: ["latin"], display: "swap" });
 const EMPRESA = {
   nombre: "VÉRTICE",
   eslogan: "Especialistas en cristales de altura",
-  whatsapp: "549XXXXXXXXXXX",
+  whatsapp: "549XXXXXXXXXXX", // ← Tu número real acá
   telefono: "+54 9 XX XXXXXXXX",
   instagram: "tu_usuario",
   correo: "info@vertice.com.ar",
@@ -24,7 +25,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${inter.className} antialiased`}>
         <header className="sticky top-0 bg-white/90 backdrop-blur-sm shadow-sm z-40">
           <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-            <div className="font-bold text-xl text-[#002B5C]">{EMPRESA.nombre}</div>
+            
+            {/* ✅ LOGO en lugar del nombre de texto */}
+            <a href="/" className="flex items-center">
+              <Image
+                src="/logo-vertice.jpg"
+                alt={`${EMPRESA.nombre} — ${EMPRESA.eslogan}`}
+                width={130}
+                height={48}
+                className="object-contain"
+                priority
+              />
+            </a>
+
             <nav className="hidden md:flex gap-5 text-gray-700 text-sm">
               <a href="/" className="hover:text-[#0077CC]">Inicio</a>
               <a href="/servicios" className="hover:text-[#0077CC]">Servicios</a>
@@ -32,6 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <a href="/cobertura" className="hover:text-[#0077CC]">Zonas</a>
               <a href="/contacto" className="hover:text-[#0077CC]">Contacto</a>
             </nav>
+
             <a
               href={`https://wa.me/${EMPRESA.whatsapp}`}
               target="_blank"
@@ -52,6 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </footer>
 
+        {/* Botón flotante de WhatsApp */}
         <a
           href={`https://wa.me/${EMPRESA.whatsapp}`}
           target="_blank"
