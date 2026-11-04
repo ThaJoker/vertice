@@ -1,16 +1,34 @@
-"use client";
-import { useState } from "react";
+'use client';
+
+import { useState } from 'react';
 
 const EMPRESA = {
   nombre: "VÉRTICE",
-  whatsapp: "549XXXXXXXXXXX",     // ← Tu número real sin espacios
-  instagram: "tu_usuario",        // ← Tu usuario sin @
-  telefono: "+54 9 XX XXXXXXXX",  // ← Tu teléfono con formato
-  correo: "info@vertice.com.ar",  // ← Tu correo real
+  whatsapp: "549XXXXXXXXXXX",       // ← Poné tu número real acá
+  telefono: "+54 9 XX XXX-XXXX",     // ← Para mostrar en pantalla
+  instagram: "vertice.cristales",    // ← Tu usuario de Instagram sin @
+  correo: "info@verticecristales.com.ar", // ← Tu correo
 };
 
 export default function Contacto() {
   const [enviado, setEnviado] = useState(false);
+  const [formData, setFormData] = useState({
+    nombre: '',
+    telefono: '',
+    zona: '',
+    latitud: '',
+    longitud: '',
+    mensaje: '',
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Enlace directo a Google Maps si completan las coordenadas
+  const enlaceMaps = formData.latitud && formData.longitud
+    ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(formData.latitud)},${encodeURIComponent(formData.longitud)}`
+    : null;
 
   return (
     <main className="min-h-screen py-16 px-4">
@@ -29,10 +47,20 @@ export default function Contacto() {
               <div className="bg-green-50 p-8 rounded-xl text-center">
                 <p className="text-xl font-semibold text-green-700">✅ ¡Mensaje enviado!</p>
                 <p className="mt-2 text-gray-600">Te respondemos lo antes posible.</p>
+                {enlaceMaps && (
+                  <a
+                    href={enlaceMaps}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block mt-4 text-[#0077CC] hover:underline"
+                  >
+                    📍 Ubicación enviada — Ver en Google Maps
+                  </a>
+                )}
               </div>
             ) : (
               <form
-                action="https://formspree.io/f/XXXXXXXX"  // ← Tu enlace de Formspree
+                action="https://formspree.io/f/XXXXXXXX"  // ← Reemplazá por tu enlace real de Formspree
                 method="POST"
                 onSubmit={() => setEnviado(true)}
                 className="space-y-4"
@@ -43,6 +71,8 @@ export default function Contacto() {
                   <label className="block text-sm font-medium mb-1 text-gray-700">Nombre y Apellido</label>
                   <input
                     name="nombre"
+                    value={formData.nombre}
+                    onChange={handleChange}
                     required
                     className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[#0077CC]"
                   />
@@ -52,24 +82,72 @@ export default function Contacto() {
                   <label className="block text-sm font-medium mb-1 text-gray-700">WhatsApp / Teléfono</label>
                   <input
                     name="telefono"
+                    value={formData.telefono}
+                    onChange={handleChange}
                     required
                     className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[#0077CC]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1 text-gray-700">Localidad</label>
+                  <label className="block text-sm font-medium mb-1 text-gray-700">Localidad / Dirección</label>
                   <input
                     name="zona"
+                    value={formData.zona}
+                    onChange={handleChange}
                     placeholder="Ej: Pinamar Norte, Villa Gesell Centro, Cariló..."
                     className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[#0077CC]"
                   />
+                </div>
+
+                {/* 📍 UBICACIÓN EXACTA — Latitud y Longitud */}
+                <div className="bg-blue-50 p-4 rounded-xl border border-blue-100">
+                  <label className="block text-sm font-semibold mb-2 text-[#002B5C]">
+                    📍 Ubicación exacta (opcional)
+                  </label>
+                  <p className="text-xs text-gray-500 mb-3">
+                    Abrí Google Maps → mantené presionado el lugar → copiá los números de arriba
+                  </p>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div>
+                      <label className="block text-xs text-gray-600 mb-1">Latitud</label>
+                      <input
+                        name="latitud"
+                        value={formData.latitud}
+                        onChange={handleChange}
+                        placeholder="-37.xxxx"
+                        className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-[#0077CC]"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs text-gray-600 mb-1">Longitud</label>
+                      <input
+                        name="longitud"
+                        value={formData.longitud}
+                        onChange={handleChange}
+                        placeholder="-57.xxxx"
+                        className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-[#0077CC]"
+                      />
+                    </div>
+                  </div>
+                  {enlaceMaps && (
+                    <a
+                      href={enlaceMaps}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block mt-2 text-sm text-[#0077CC] hover:underline"
+                    >
+                      🔗 Previsualizar en Google Maps
+                    </a>
+                  )}
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium mb-1 text-gray-700">¿Qué necesitás?</label>
                   <textarea
                     name="mensaje"
+                    value={formData.mensaje}
+                    onChange={handleChange}
                     rows={4}
                     placeholder="Tipo de servicio, cantidad de vidrios, altura aproximada..."
                     className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[#0077CC]"
