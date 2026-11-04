@@ -31,7 +31,7 @@ export default function Home() {
             {EMPRESA.eslogan}
           </p>
           <p className="text-lg text-gray-200 mb-8 max-w-2xl">
-            Pinamar, Villa Gesell y toda la Costa Atlántica. Conocemos el clima costero y sabemos cómo cuidar tus cristales.
+            Villa Gesell, Pinamar y toda la Costa Atlántica. Conocemos el clima costero y sabemos cómo cuidar tus cristales.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -56,8 +56,8 @@ export default function Home() {
           <h2 className="text-2xl font-bold text-center text-[#002B5C] mb-10">¿Dónde trabajamos?</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { titulo: "Pinamar", desc: "Centro, Norte, Sur y alrededores" },
               { titulo: "Villa Gesell", desc: "Centro, Norte, Sur y costa" },
+	      { titulo: "Pinamar", desc: "Centro, Norte, Sur y alrededores" },      
               { titulo: "Zonas Aledañas", desc: "Cariló, Valeria del Mar, Ostende" },
             ].map((zona, i) => (
               <div key={i} className="bg-white p-6 rounded-xl shadow-sm text-center border-t-4 border-[#0077CC]">
