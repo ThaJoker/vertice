@@ -57,12 +57,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {children}
 
-        <footer className="bg-[#002B5C] text-white py-8 px-4 text-sm mt-12">
+               <footer className="bg-[#002B5C] text-white py-8 px-4 text-sm mt-12">
           <div className="max-w-7xl mx-auto text-center">
             <p className="font-bold text-lg">{EMPRESA.nombre}</p>
             <p className="text-blue-200 mt-1">{EMPRESA.eslogan}</p>
             <p className="mt-3">📧 {EMPRESA.correo} | 📞 {EMPRESA.telefono}</p>
-            <p className="mt-1">© 2026 {EMPRESA.nombre} — Todos los derechos reservados</p>
+            <p className="mt-4 text-blue-300 text-xs">
+              © 2026 {EMPRESA.nombre} — Todos los derechos reservados
+            </p>
+            <p className="mt-2 text-blue-400 text-xs">
+              Powered By Dola IA — Santuario 💙
+            </p>
           </div>
         </footer>
 
