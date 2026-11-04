@@ -4,7 +4,7 @@ import Image from "next/image";
 const EMPRESA = {
   nombre: "VÉRTICE",
   eslogan: "Especialistas en cristales de altura",
-  whatsapp: "549XXXXXXXXXXX", // ← Tu número real acá
+  whatsapp: "+5492255555094", // ← Tu número real acá
 };
 
 export default function Home() {

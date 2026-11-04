@@ -8,8 +8,8 @@ const inter = Inter({ subsets: ["latin"], display: "swap" });
 const EMPRESA = {
   nombre: "VÉRTICE",
   eslogan: "Especialistas en cristales de altura",
-  whatsapp: "549XXXXXXXXXXX", // ← Tu número real acá
-  telefono: "+54 9 XX XXXXXXXX",
+  whatsapp: "+5492255555094", // ← Tu número real acá
+  telefono: "+5492255555094",
   instagram: "tu_usuario",
   correo: "info@vertice.com.ar",
 };
