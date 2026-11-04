@@ -12,7 +12,7 @@ const EMPRESA = {
   whatsapp: "5492255555094",
   telefono: "+54 9 2255 555-5094",
   instagram: "tu_usuario",
-  correo: "info@vertice.com.ar",
+  correo: "info@verticecristales.com.ar",
 };
 
 export const metadata: Metadata = {
