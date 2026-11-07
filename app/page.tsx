@@ -8,52 +8,6 @@ const EMPRESA = {
 };
 
 export default function Home() {
-  // Lista de trabajos — solo los que tenés
-  const trabajos = [
-    {
-      id: 1,
-      imagen: "/trabajos/casa-lomas-pinamar.jpg",
-      titulo: "Residencia en Pinamar",
-      descripcion: "Limpieza integral de frentes y cristales en vivienda exclusiva",
-    },
-    {
-      id: 2,
-      imagen: "/trabajos/residencia-moderna-pinamar.jpg",
-      titulo: "Residencia exclusiva, Pinamar",
-      descripcion: "Limpieza de grandes superficies vidriadas y terrazas",
-    },
-    {
-      id: 3,
-      imagen: "/trabajos/cristales-piscina.jpg",
-      titulo: "Frente vidriado con piscina",
-      descripcion: "Resultado impecable en viviendas de categoría",
-    },
-    {
-      id: 4,
-      imagen: "/trabajos/edificio-status-pinamar.jpg",
-      titulo: "Edificio Status — Pinamar",
-      descripcion: "Limpieza de fachada y ventanales en altura",
-    },
-    {
-      id: 5,
-      imagen: "/trabajos/positive-tower-gesell.jpg",
-      titulo: "Positive Tower — Villa Gesell",
-      descripcion: "Edificio corporativo y residencial completo",
-    },
-    {
-      id: 6,
-      imagen: "/trabajos/interior-vidrio-limpio.jpg",
-      titulo: "Vista nítida garantizada",
-      descripcion: "Cristales limpios desde adentro y afuera",
-    },
-    {
-      id: 7,
-      imagen: "/trabajos/la-argentina-center.jpg",
-      titulo: "La Argentina Center",
-      descripcion: "Limpieza profesional de fachada vidriada y accesos",
-    },
-  ];
-
   return (
     <main className="min-h-screen">
       {/* HERO CON IMAGEN */}
@@ -113,42 +67,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* GALERÍA DE TRABAJOS REALIZADOS */}
+      {/* ENLACE A GALERÍA DE TRABAJOS */}
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#002B5C] text-center mb-4">
-            Trabajos Realizados
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#002B5C] mb-4">
+            Nuestros Trabajos
           </h2>
-          <p className="text-center text-gray-600 mb-12 text-lg max-w-2xl mx-auto">
-            Orgullosos de cuidar los cristales de la Costa Atlántica. Pinamar, Villa Gesell y alrededores.
+          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+            Recorré las obras que realizamos en la Costa Atlántica. Pinamar, Villa Gesell y alrededores.
           </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {trabajos.map((trabajo) => (
-              <div
-                key={trabajo.id}
-                className="bg-gray-50 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300"
-              >
-                <div className="relative h-64 w-full">
-                  <Image
-                    src={trabajo.imagen}
-                    alt={trabajo.titulo}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                </div>
-                <div className="p-5">
-                  <h3 className="font-bold text-lg text-[#002B5C]">
-                    {trabajo.titulo}
-                  </h3>
-                  <p className="text-gray-600 mt-2 text-sm">
-                    {trabajo.descripcion}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <Link
+            href="/trabajos"
+            className="inline-block bg-[#002B5C] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#004080] transition"
+          >
+            📸 Ver Galería Completa →
+          </Link>
         </div>
       </section>
     </main>

@@ -1,4 +1,4 @@
-'use client'; // ✅ Acá sí va el use client
+'use client';
 
 import Image from "next/image";
 import Link from "next/link";
@@ -34,6 +34,7 @@ export default function Navbar() {
             <Link href="/" className="hover:text-[#0077CC]">Inicio</Link>
             <Link href="/servicios" className="hover:text-[#0077CC]">Servicios</Link>
             <Link href="/seguridad" className="hover:text-[#0077CC]">Seguridad</Link>
+            <Link href="/trabajos" className="hover:text-[#0077CC] font-semibold">📸 Trabajos</Link>
             <Link href="/cobertura" className="hover:text-[#0077CC]">Zonas</Link>
             <Link href="/contacto" className="hover:text-[#0077CC]">Contacto</Link>
           </nav>
@@ -82,6 +83,13 @@ export default function Navbar() {
                 onClick={() => setMenuAbierto(false)}
               >
                 Seguridad
+              </Link>
+              <Link
+                href="/trabajos"
+                className="py-2 px-2 text-gray-700 hover:text-[#0077CC] hover:bg-blue-50 rounded font-semibold"
+                onClick={() => setMenuAbierto(false)}
+              >
+                📸 Trabajos
               </Link>
               <Link
                 href="/cobertura"
