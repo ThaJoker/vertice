@@ -4,18 +4,17 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-// Solo las fotos que tenés — extensión .png corregida
 const trabajos = [
   {
     id: 1,
     imagen: "/trabajos/edificio-status-pinamar.png",
     titulo: "Edificio Status — Pinamar",
-    descripcion: "Limpieza de fachada y ventanales en altura",
+    descripcion: "Hidrolavado y lavado profesional de cristales",
   },
   {
     id: 2,
     imagen: "/trabajos/positive-tower-gesell.png",
-    titulo: "Positive Tower — Villa Gesell",
+    titulo: "Positive Tower — Pinamar",
     descripcion: "Edificio corporativo y residencial completo",
   },
   {
@@ -33,13 +32,13 @@ const trabajos = [
   {
     id: 5,
     imagen: "/trabajos/residencia-moderna-pinamar.png",
-    titulo: "Residencia exclusiva, Pinamar",
+    titulo: "Residencia — Pinamar Norte",
     descripcion: "Grandes superficies vidriadas y terrazas",
   },
   {
     id: 6,
     imagen: "/trabajos/cristales-piscina.png",
-    titulo: "Frente vidriado con piscina",
+    titulo: "Frente vidriado con piscina — Pinamar",
     descripcion: "Resultado impecable en viviendas de categoría",
   },
   {
@@ -53,7 +52,6 @@ const trabajos = [
 export default function TrabajosRealizados() {
   const [indiceActivo, setIndiceActivo] = useState(0);
 
-  // Pasa automáticamente cada 5 segundos
   useEffect(() => {
     const intervalo = setInterval(() => {
       setIndiceActivo((anterior) =>
@@ -66,13 +64,12 @@ export default function TrabajosRealizados() {
   return (
     <main className="min-h-screen bg-gray-50 py-8 px-4">
       <div className="max-w-7xl mx-auto">
-        {/* Encabezado */}
         <div className="text-center mb-10">
           <h1 className="text-3xl md:text-5xl font-bold text-[#002B5C] mb-4">
             Trabajos Realizados
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Orgullosos de cuidar los cristales de la Costa Atlántica. Pinamar, Villa Gesell y alrededores.
+            Orgullosos de cuidar los cristales de Pinamar y toda la Costa Atlántica.
           </p>
           <Link
             href="/"
@@ -82,7 +79,6 @@ export default function TrabajosRealizados() {
           </Link>
         </div>
 
-        {/* CARRUSEL HORIZONTAL TIPO REEL */}
         <div className="relative overflow-hidden rounded-2xl shadow-xl bg-white">
           <div
             className="flex transition-transform duration-700 ease-out"
@@ -99,9 +95,7 @@ export default function TrabajosRealizados() {
                     sizes="100vw"
                     priority
                   />
-                  {/* Degradado para que se lea el texto */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                  {/* Texto sobre la imagen */}
                   <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
                     <h2 className="text-2xl md:text-3xl font-bold mb-2">
                       {trabajo.titulo}
@@ -115,7 +109,6 @@ export default function TrabajosRealizados() {
             ))}
           </div>
 
-          {/* Botones de navegación manual */}
           <button
             onClick={() =>
               setIndiceActivo(
@@ -138,7 +131,6 @@ export default function TrabajosRealizados() {
           </button>
         </div>
 
-        {/* Puntos indicadores */}
         <div className="flex justify-center gap-3 mt-8">
           {trabajos.map((_, i) => (
             <button
