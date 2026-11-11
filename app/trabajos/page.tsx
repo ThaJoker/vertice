@@ -25,29 +25,60 @@ const trabajos = [
   },
   {
     id: 4,
+    imagen: "/trabajos/chalet-4-pinamar.png",
+    titulo: "Chalet 4 — Pinamar",
+    descripcion: "Limpieza integral de cristales en vivienda exclusiva",
+  },
+  {
+    id: 5,
+    imagen: "/trabajos/chalet-pinamar-2.png",
+    titulo: "Chalet — Pinamar Norte",
+    descripcion: "Grandes ventanales y superficies vidriadas",
+  },
+  {
+    id: 6,
+    imagen: "/trabajos/chalet-pinamar.png",
+    titulo: "Residencia — Pinamar",
+    descripcion: "Mantenimiento completo de frentes y cristales",
+  },
+  {
+    id: 7,
+    imagen: "/trabajos/sagitario-pinamar.png",
+    titulo: "Pinturería Sagitario — Pinamar",
+    descripcion: "Limpieza de vidrios en local comercial",
+  },
+  {
+    id: 8,
+    imagen: "/trabajos/sagitario-madariaga.png",
+    titulo: "Pinturería Sagitario — Madariaga",
+    descripcion: "Atención a cadenas comerciales",
+  },
+  {
+    id: 9,
     imagen: "/trabajos/casa-lomas-pinamar.png",
     titulo: "Residencia en Pinamar",
     descripcion: "Limpieza integral de frentes y cristales",
   },
   {
-    id: 5,
+    id: 10,
     imagen: "/trabajos/residencia-moderna-pinamar.png",
     titulo: "Residencia — Pinamar Norte",
     descripcion: "Grandes superficies vidriadas y terrazas",
   },
   {
-    id: 6,
+    id: 11,
     imagen: "/trabajos/cristales-piscina.png",
     titulo: "Frente vidriado con piscina — Pinamar",
     descripcion: "Resultado impecable en viviendas de categoría",
   },
   {
-    id: 7,
+    id: 12,
     imagen: "/trabajos/interior-vidrio-limpio.png",
     titulo: "Vista nítida garantizada",
     descripcion: "Cristales limpios desde adentro y afuera",
   },
 ];
+
 
 export default function TrabajosRealizados() {
   const [indiceActivo, setIndiceActivo] = useState(0);
