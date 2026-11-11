@@ -43,7 +43,7 @@ const trabajos = [
   },
   {
     id: 7,
-    imagen: "/trabajos/sagitario-pinamar.png",
+    imagen: "/trabajos/Sagitario-pinamar.png",
     titulo: "Pinturería Sagitario — Pinamar",
     descripcion: "Limpieza de vidrios en local comercial",
   },
