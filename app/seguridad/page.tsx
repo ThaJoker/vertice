@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const metadata = {
   title: "Seguridad — VÉRTICE",
   description: "Protocolos, equipamiento y certificaciones. Trabajamos en altura con los más altos estándares de protección.",
@@ -10,16 +12,16 @@ export default function SeguridadPage() {
         {/* 📌 Encabezado */}
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-4xl font-bold text-[#002B5C] mb-4">
-            Seguridad
+            Seguridad y Compromiso
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Tu tranquilidad y la de nuestro equipo es nuestra prioridad. 
-            Trabajamos con equipamiento certificado y protocolos estrictos 
-            en cada intervención.
+            Trabajamos con equipamiento certificado, protocolos estrictos 
+            y documentación disponible en cada intervención.
           </p>
         </div>
 
-        {/* ✅ Pilares de seguridad */}
+        {/* ✅ Pilares de seguridad — ORIGINAL */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           
           <div className="bg-white rounded-xl shadow-md p-8">
@@ -135,7 +137,96 @@ export default function SeguridadPage() {
           </div>
         </div>
 
-        {/* 📌 Garantía */}
+        {/* 📑 NUEVA SECCIÓN — Documentación y Descargas */}
+        <div className="bg-white rounded-xl shadow-md p-8 mb-16">
+          <h2 className="text-2xl font-bold text-[#002B5C] mb-6">📑 Documentación y Descargas</h2>
+          <p className="text-gray-600 mb-6">Puede descargar nuestra documentación estándar o solicitar copia personalizada para su proyecto:</p>
+          
+          <div className="grid md:grid-cols-2 gap-4 mb-6">
+            <a 
+              href="/documentos/presupuesto-modelo.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 p-4 border border-gray-200 rounded-xl hover:bg-blue-50 hover:border-[#0077CC] transition"
+            >
+              <span className="text-2xl">📄</span>
+              <div>
+                <h3 className="font-semibold text-[#002B5C]">Presupuesto Modelo</h3>
+                <p className="text-sm text-gray-500">Formato de cotización estándar</p>
+              </div>
+            </a>
+
+            <a 
+              href="/documentos/contrato-servicios.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 p-4 border border-gray-200 rounded-xl hover:bg-blue-50 hover:border-[#0077CC] transition"
+            >
+              <span className="text-2xl">📝</span>
+              <div>
+                <h3 className="font-semibold text-[#002B5C]">Contrato de Servicios</h3>
+                <p className="text-sm text-gray-500">Términos y condiciones de trabajo</p>
+              </div>
+            </a>
+
+            <a 
+              href="/documentos/politica-seguridad.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 p-4 border border-gray-200 rounded-xl hover:bg-blue-50 hover:border-[#0077CC] transition"
+            >
+              <span className="text-2xl">🛡️</span>
+              <div>
+                <h3 className="font-semibold text-[#002B5C]">Política de Seguridad</h3>
+                <p className="text-sm text-gray-500">Protocolos y procedimientos en obra</p>
+              </div>
+            </a>
+
+            <a 
+              href="/documentos/seguros-responsabilidad.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 p-4 border border-gray-200 rounded-xl hover:bg-blue-50 hover:border-[#0077CC] transition"
+            >
+              <span className="text-2xl">🔒</span>
+              <div>
+                <h3 className="font-semibold text-[#002B5C]">Seguros y Coberturas</h3>
+                <p className="text-sm text-gray-500">Pólizas y constancias vigentes</p>
+              </div>
+            </a>
+          </div>
+
+          <p className="text-sm text-gray-500">
+            💡 <em>Nota: Si los archivos aún no están disponibles para descarga, contáctenos y se los enviamos por WhatsApp o correo sin compromiso.</em>
+          </p>
+        </div>
+
+        {/* ⚠️ RECOMENDACIONES AL CLIENTE — NUEVO */}
+        <div className="bg-amber-50 rounded-2xl p-8 mb-12">
+          <h2 className="text-xl font-bold text-[#002B5C] mb-4">⚠️ Recomendaciones antes de contratar</h2>
+          <p className="text-gray-600 mb-4">Antes de elegir quién trabaja en su propiedad, verifique:</p>
+          
+          <div className="space-y-3">
+            <div className="flex items-start gap-3">
+              <span className="text-green-600 font-bold">✓</span>
+              <p className="text-gray-700"><strong>¿La empresa cuenta con seguro de accidentes y responsabilidad civil vigente?</strong></p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-green-600 font-bold">✓</span>
+              <p className="text-gray-700"><strong>¿El personal está capacitado y usa equipo de protección completo?</strong></p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-green-600 font-bold">✓</span>
+              <p className="text-gray-700"><strong>¿El presupuesto es claro, por escrito y sin costos ocultos?</strong></p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-green-600 font-bold">✓</span>
+              <p className="text-gray-700"><strong>¿La empresa ofrece garantía por el trabajo realizado?</strong></p>
+            </div>
+          </div>
+        </div>
+
+        {/* 📌 Garantía — ORIGINAL */}
         <div className="bg-blue-50 rounded-2xl p-8 text-center mb-12">
           <h2 className="text-2xl font-bold text-[#002B5C] mb-3">
             Trabajamos con Transparencia
@@ -154,16 +245,16 @@ export default function SeguridadPage() {
             >
               📄 Solicitar Documentación
             </a>
-            <a
+            <Link
               href="/contacto"
               className="bg-white text-[#002B5C] border-2 border-[#002B5C] px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition"
             >
               📍 Consultar por tu Zona
-            </a>
+            </Link>
           </div>
         </div>
 
-        {/* 📱 Llamado final */}
+        {/* 📱 Llamado final — ORIGINAL */}
         <div className="bg-[#002B5C] rounded-2xl p-8 text-center text-white">
           <h2 className="text-2xl font-bold mb-3">¿Tenés dudas sobre nuestra seguridad?</h2>
           <p className="text-blue-200 mb-6 max-w-xl mx-auto">
