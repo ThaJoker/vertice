@@ -77,6 +77,37 @@ const trabajos = [
     titulo: "Vista nítida garantizada",
     descripcion: "Cristales limpios desde adentro y afuera",
   },
+    {
+    id: 13,
+    imagen: "/trabajos/edif-pinamar-norte.png",
+    titulo: "Edificio — Pinamar Norte",
+    descripcion: "Limpieza profesional de cristales en altura",
+  },
+  {
+    id: 14,
+    imagen: "/trabajos/edif-pinamar-norte2.png",
+    titulo: "Edificio — Pinamar Norte",
+    descripcion: "Hidrolavado y limpieza de fachada vidriada",
+  },
+  {
+    id: 15,
+    imagen: "/trabajos/pintureria-sagitario-mar-azul.png",
+    titulo: "Pinturería Sagitario — Mar Azul",
+    descripcion: "Atención comercial y limpieza de vidrios",
+  },
+  {
+    id: 16,
+    imagen: "/trabajos/pintureria-sagitario-mar-azul2.png",
+    titulo: "Pinturería Sagitario — Mar Azul",
+    descripcion: "Mantenimiento integral de local comercial",
+  },
+  {
+    id: 17,
+    imagen: "/trabajos/edif-pinamar-norte3.png",
+    titulo: "Edificio — Pinamar Norte",
+    descripcion: "Servicio completo en edificios residenciales",
+  },
+
 ];
 
 
