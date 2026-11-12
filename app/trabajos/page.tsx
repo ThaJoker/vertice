@@ -103,7 +103,7 @@ const trabajos = [
   },
   {
     id: 17,
-    imagen: "/trabajos/edif-pinamar-norte3.png",
+    imagen: "/trabajos/edif-pinamar- norte3.png",
     titulo: "Edificio — Pinamar Norte",
     descripcion: "Servicio completo en edificios residenciales",
   },
